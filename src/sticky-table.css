@@ -1,54 +1,54 @@
-.sticky-table {
+.stickyTable {
   position: relative;
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
 }
-.sticky-table .sticky-table-corner {
+.stickyTable .stickyTableCorner {
   z-index: 4;
 }
-.sticky-table .sticky-table-header {
+.stickyTable .stickyTableHeader {
   z-index: 3;
   overflow: hidden;
 }
-.sticky-table .sticky-table-column {
+.stickyTable .stickyTableColumn {
   min-height: 100%;
 }
-.sticky-table .sticky-table-column,
-.sticky-table .sticky-table-header,
-.sticky-table .sticky-table-corner,
-.sticky-table .sticky-table-x-wrapper {
+.stickyTable .stickyTableColumn,
+.stickyTable .stickyTableHeader,
+.stickyTable .stickyTableCorner,
+.stickyTable .stickyTableXwrapper {
   display: inline-block;
   vertical-align: top;
 }
-.sticky-table .sticky-table-column.hidden,
-.sticky-table .sticky-table-header.hidden,
-.sticky-table .sticky-table-corner.hidden {
+.stickyTable .stickyTableColumn.hidden,
+.stickyTable .stickyTableHeader.hidden,
+.stickyTable .stickyTableCorner.hidden {
   display: none;
 }
-.sticky-table .sticky-table-y-wrapper,
-.sticky-table .sticky-table-header-wrapper {
+.stickyTable .stickyTableYwrapper,
+.stickyTable .stickyTableHeaderWrapper {
   white-space: nowrap;
 }
-.sticky-table .sticky-table-x-wrapper,
-.sticky-table .sticky-table-y-wrapper {
+.stickyTable .stickyTableXwrapper,
+.stickyTable .stickyTableYwrapper {
   z-index: 0;
   position: relative;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
 }
-.sticky-table .sticky-table-x-wrapper {
+.stickyTable .stickyTableXwrapper {
   min-height: 100%;
   width: 100%;
   overflow-x: auto;
 }
-.sticky-table .sticky-table-y-wrapper {
+.stickyTable .stickyTableYwrapper {
   height: 100%;
   overflow-y: auto;
   margin-right: -17px;
   padding-right: 17px;
 }
-.sticky-table .sticky-table-table {
+.stickyTable .stickyTableTable {
   overflow: visible;
 }
 /*
@@ -57,40 +57,39 @@ Because of this it won't paint when the scrollbar paints.
 This one was crucial for performance.
 Scrolling is ~10-20x smoother.
 */
-.sticky-table .sticky-table-table {
+.stickyTable .stickyTableTable {
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
 
 /* Scrollbars */
-.sticky-table-y-wrapper::-webkit-scrollbar,
-.sticky-table-x-wrapper::-webkit-scrollbar {
+.stickyTableYwrapper::-webkit-scrollbar,
+.stickyTableXwrapper::-webkit-scrollbar {
   display: none;
 }
-.sticky-table .x-scrollbar,
-.sticky-table .y-scrollbar {
+.stickyTable .xScrollbar,
+.stickyTable .yScrollbar {
   position: absolute;
   background-color: transparent;
   z-index: 5;
   overflow: auto;
   transform: translateZ(0);
-  -webkit-transform: translateZ(0);
 }
-.sticky-table .x-scrollbar {
+.stickyTable .xScrollbar {
   left: 0px;
   bottom: 0px;
   width: 100%;
   height: 17px;
 }
-.sticky-table .y-scrollbar {
+.stickyTable .yScrollbar {
   right: 0px;
   top: 0px;
   height: 100%;
   width: 17px;
 }
-.sticky-table .x-scrollbar div {
+.stickyTable .xScrollbar div {
   height: 100%;
 }
-.sticky-table .y-scrollbar div {
+.stickyTable .yScrollbar div {
   width: 100%;
 }

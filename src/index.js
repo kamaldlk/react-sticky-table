@@ -49,17 +49,17 @@ class StickyTable extends PureComponent {
    */
   componentDidMount() {
     if (this.dom.wrapper) {
-      this.dom.bodyTable = this.dom.wrapper.querySelector('.sticky-table-x-wrapper .sticky-table-table');
-      this.dom.xScrollbar = this.dom.wrapper.querySelector('.x-scrollbar');
-      this.dom.yScrollbar = this.dom.wrapper.querySelector('.y-scrollbar');
-      this.dom.xWrapper = this.dom.wrapper.querySelector('.sticky-table-x-wrapper');
-      this.dom.yWrapper = this.dom.wrapper.querySelector('.sticky-table-y-wrapper');
-      this.dom.stickyHeader = this.dom.wrapper.querySelector('.sticky-table-header');
-      this.dom.stickyColumn = this.dom.wrapper.querySelector('.sticky-table-column');
-      this.dom.stickyCorner = this.dom.wrapper.querySelector('.sticky-table-corner');
-      this.dom.stickyHeaderTable = this.dom.stickyHeader.querySelector('.sticky-table-table');
-      this.dom.stickyColumnTable = this.dom.stickyColumn.querySelector('.sticky-table-table');
-      this.dom.stickyCornerTable = this.dom.stickyCorner.querySelector('.sticky-table-table');
+      this.dom.bodyTable = this.dom.wrapper.querySelector('.stickyTableXwrapper .stickyTableTable');
+      this.dom.xScrollbar = this.dom.wrapper.querySelector('.xScrollbar');
+      this.dom.yScrollbar = this.dom.wrapper.querySelector('.yScrollbar');
+      this.dom.xWrapper = this.dom.wrapper.querySelector('.stickyTableXwrapper');
+      this.dom.yWrapper = this.dom.wrapper.querySelector('.stickyTableYwrapper');
+      this.dom.stickyHeader = this.dom.wrapper.querySelector('.stickyTableHeader');
+      this.dom.stickyColumn = this.dom.wrapper.querySelector('.stickyTableColumn');
+      this.dom.stickyCorner = this.dom.wrapper.querySelector('.stickyTableCorner');
+      this.dom.stickyHeaderTable = this.dom.stickyHeader.querySelector('.stickyTableTable');
+      this.dom.stickyColumnTable = this.dom.stickyColumn.querySelector('.stickyTableTable');
+      this.dom.stickyCornerTable = this.dom.stickyCorner.querySelector('.stickyTableTable');
 
       this.setScrollData();
 
@@ -440,19 +440,19 @@ class StickyTable extends PureComponent {
     }
 
     return (
-      <div className={'sticky-table ' + (this.props.className || '')} ref={setWrapperElement}>
-        <div className='x-scrollbar'><div></div></div>
-        <div className='y-scrollbar'><div></div></div>
-        <div className='sticky-table-header-wrapper'>
-          <div className={['sticky-table-corner', (this.props.stickyHeaderCount && this.props.stickyColumnCount) ? '' : 'hidden'].join(' ')}>
+      <div className={'stickyTable ' + (this.props.className || '')} ref={setWrapperElement}>
+        <div className='xScrollbar'><div></div></div>
+        <div className='yScrollbar'><div></div></div>
+        <div className='stickyTableHeaderWrapper'>
+          <div className={['stickyTableCorner', (this.props.stickyHeaderCount && this.props.stickyColumnCount) ? '' : 'hidden'].join(' ')}>
             <Table>{stickyCornerRows}</Table>
           </div>
-          <div className={['sticky-table-header', this.props.stickyHeaderCount ? '' : 'hidden'].join(' ')}>
+          <div className={['stickyTableHeader', this.props.stickyHeaderCount ? '' : 'hidden'].join(' ')}>
             <Table>{stickyHeaderRows}</Table>
           </div>
         </div>
-        <div className='sticky-table-y-wrapper'>
-          <div className={['sticky-table-column', this.props.stickyColumnCount ? '' : 'hidden'].join(' ')}>
+        <div className='stickyTableYwrapper'>
+          <div className={['stickyTableColumn', this.props.stickyColumnCount ? '' : 'hidden'].join(' ')}>
             <Table>{stickyColumnRows}</Table>
           </div>
           <div className='sticky-table-x-wrapper'>
